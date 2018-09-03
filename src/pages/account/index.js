@@ -42,7 +42,7 @@ const entryList = [
 class Index extends Component {
 
   config = {
-    navigationBarTitleText: '深漫'
+    navigationBarTitleText: '个人中心'
   }
 
   constructor (params) {

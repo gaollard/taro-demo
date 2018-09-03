@@ -21,6 +21,15 @@ class App extends Component {
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      list: [{
+        pagePath: "pages/index/index",
+        text: "首页"
+      }, {
+        pagePath: "pages/account/index",
+        text: "我的"
+      }]
     }
   }
 
