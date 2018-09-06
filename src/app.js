@@ -22,15 +22,24 @@ class App extends Component {
       navigationBarTextStyle: 'black'
     },
     tabBar: {
+      backgroundColor: '#fff',
+      selectedColor: '#de181b',
+      color: '#777',
       list: [{
+        text: "首页",
         pagePath: "pages/index/index",
-        text: "首页"
+        iconPath: "assets/img/home.png",
+        selectedIconPath: "assets/img/home_fill.png",
       }, {
+        text: "分类",
         pagePath: "pages/category/index",
-        text: "分类"
+        iconPath: "assets/img/manage.png",
+        selectedIconPath: "assets/img/manage_fill.png"
       }, {
         pagePath: "pages/account/index",
-        text: "我的"
+        text: "我的",
+        iconPath: "assets/img/person.png",
+        selectedIconPath: "assets/img/person_fill.png"
       }]
     }
   }
