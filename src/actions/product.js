@@ -4,15 +4,13 @@ import {
 } from '../constants/product'
 import apis from '../apis/apis';
 
+// 获取商品列表
 export function getProductList () {
   return async dispatch => {
-    let res = await apis.getProductList()
-      , body = res.data
+    const res = await apis.getProductList()
+    const body = res.data
     if (body.code === '0') {
-      dispatch({
-        type: GET_PRODUCT_LIST,
-        data: body.data
-      })
+      dispatch({ type: GET_PRODUCT_LIST, data: body.data })
     } else {
       console.log(res)
     }

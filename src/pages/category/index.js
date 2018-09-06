@@ -42,15 +42,15 @@ const entryList = [
 class Index extends Component {
 
   config = {
-    navigationBarTitleText: '深漫商城'
+    navigationBarTitleText: '商品分类'
   }
 
   constructor (params) {
     super(params)
     this.state = {
       pLogoBase,
-      bannerList,
-      entryList
+      entryList,
+      bannerList
     }
   }
 
