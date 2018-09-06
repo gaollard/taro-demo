@@ -1,7 +1,7 @@
 const config = {
   projectName: 'minip-taro',
   date: '2018-9-3',
-  designWidth: 375,
+  designWidth: 750,
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: {
