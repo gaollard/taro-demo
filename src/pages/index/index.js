@@ -111,7 +111,7 @@ class Index extends Component {
           <View className="card-hd">热门商品</View>
           <View className="card-bd">
             <View className="p-list">
-              {productList.slice(0, 8).map(item => {
+              {productList && productList.slice(0, 8).map(item => {
                 return item.productLogo && item.productName ? (
                   <View className="p-item" key={item.productId}>
                     <View className="p-logo-wrap">
