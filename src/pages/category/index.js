@@ -5,7 +5,8 @@ import {
   Image,
   Text,
   Swiper,
-  SwiperItem
+  SwiperItem,
+  ScrollView
 } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import * as productAction from '../../actions/product'
@@ -30,7 +31,8 @@ class Index extends Component {
   constructor(params) {
     super(params)
     this.state = {
-      pLogoBase
+      pLogoBase,
+      currentBrandId: 1
     }
   }
 
@@ -66,16 +68,22 @@ class Index extends Component {
         </View>
 
         <View className="scroll-main">
+
           {/* card brand */}
-          <View className="brand-list">
-          {brandList.map(item => {
-            return (
-              <View className="brand-item">{item.brandName}</View>
-            )
-          })}
-          </View>
+          <ScrollView className="brand-list" scrollY={ true }>
+            {
+              brandList.map(item => {
+                return (
+                  item.brandId === this.state.currentBrandId 
+                    ? <View className="brand-item is-active">{item.brandName}</View>
+                    : <View className="brand-item">{item.brandName}</View>
+                )
+              })
+            }
+          </ScrollView>
           {/* card product */}
-          <View className="p-list">
+
+          <ScrollView className="p-list" scrollY={ true }>
             {productList.slice(0, 8).map(item => {
               return item.productLogo && item.productName ? (
                 <View className="p-item" key={item.productId}>
@@ -96,7 +104,7 @@ class Index extends Component {
                 </View>
               ) : null
             })}
-          </View>
+          </ScrollView>
         </View>
       </View>
     )

@@ -1,12 +1,21 @@
 .page-category {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
   background-color: #f4f4f4;
-  $cate_height: 100px;
-  $brand_height: 100px;
+
+  $cate_height: 86px;
+  $brand_height: 90px;
+
   .cate-list {
     display: flex;
     align-items: center;
     height: $cate_height;
     background-color: #fff;
+    border-bottom: 2px solid #f4f4f4;
+    box-sizing: border-box;
     .cate-item {
       flex: 1;
       font-size: 28px;
@@ -15,7 +24,7 @@
   }
 
   .scroll-main {
-    position: fixed;
+    position: absolute;
     top: $cate_height;
     left: 0;
     right: 0;
@@ -24,54 +33,66 @@
   }
 
   .brand-list {
+    width: 160px;
+    height: 100%;
+    background-color: #f4f4f4;
     .brand-item {
-      width: 160px;
       height: $brand_height;
+      line-height: $brand_height;
       font-size: 28px;
+      color: #666;
       text-align: center;
+      &.is-active {
+        color: #333;
+        background-color: #fff;
+      }
     }
   }
 
   .p-list {
+    overflow: hidden;
     flex: 1;
+    padding: 20px;
     font-size: 0;
+    background-color: #fff;
     .p-item {
       float: left;
-      width: 170px;
-      margin-bottom: 10px;
+      width: 48%;
+      margin-bottom: 20px;
       text-align: center;
-      border: 1px#f2f2f2 solid;
+      border: 2px#f2f2f2 solid;
       box-sizing: border-box;
       &:nth-child(odd) {
-        margin-right: 5px;
+        margin-right: 20px;
       }
       &:nth-child(even) {
-        margin-left: 6px;
+        margin-right: 0px;
       }
     }
     .p-logo-wrap {
+      height: 248px;
       background-color: #f2f2f2;
     }
     .p-logo {
-      width: 124px;
-      height: 124px;
+      width: 248px;
+      height: 248px;
     }
     .p-name {
-      margin-top: 6px;
-      font-size: 14px;
+      margin-top: 12px;
+      font-size: 28px;
     }
     .p-tip {
-      margin-top: 4px;
-      font-size: 12px;
+      margin-top: 8px;
+      font-size: 24px;
       color: #666;
     }
     .p-now-price {
-      margin-top: 4px;
-      margin-bottom: 10px;
-      font-size: 14px;
+      margin-top: 8px;
+      margin-bottom: 20px;
+      font-size: 28px;
     }
     .now-price-num {
-      font-size: 14px;
+      font-size: 28px;
       font-weight: 500;
       color: #fe5649;
     }

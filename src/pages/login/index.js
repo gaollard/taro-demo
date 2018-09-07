@@ -15,29 +15,28 @@ import './index.scss'
 class Index extends Component {
 
   config = {
-    navigationBarTitleText: '个人中心'
-  }
-
-  constructor (params) {
-    super(params)
-    this.state = { }
+    navigationBarTitleText: ''
   }
 
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
   }
+
   switchPage(url) {
     Taro.navigateTo({ url })
   }
-  componentDidMount () {}
+
+  componentDidMount () {
+  }
+
   componentWillUnmount () { }
   componentDidShow () { }
   componentDidHide () { }
 
   render() {
     return (
-      <View className="page page-welcome">
-        个人中心
+      <View className="page page-cart">
+        <Button>授权登录</Button>
       </View>
     )
   }
