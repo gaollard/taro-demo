@@ -39,7 +39,6 @@ class Index extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props)
     this.props.getCategoryList()
     this.props.getBrandList()
     this.props.getProductList()
