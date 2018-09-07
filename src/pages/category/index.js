@@ -58,13 +58,9 @@ class Index extends Component {
 
         {/* card category */}
         <View className="cate-list">
-          {
-            categoryList.map(item => {
-              return (
-                <View className="cate-item">{item.categoryName}</View>
-              )
-            })
-          }
+          {categoryList.map(item => {
+            return <View className="cate-item">{item.categoryName}</View>
+          })}
         </View>
 
         <View className="scroll-main">
@@ -84,26 +80,28 @@ class Index extends Component {
           {/* card product */}
 
           <ScrollView className="p-list" scrollY={ true }>
-            {productList.slice(0, 8).map(item => {
-              return item.productLogo && item.productName ? (
-                <View className="p-item" key={item.productId}>
-                  <View className="p-logo-wrap">
-                    <Image
-                      className="p-logo"
-                      src={this.state.pLogoBase + item.productLogo}
-                    />
+            <View className="p-list__box">
+              {productList.slice(0, 8).map(item => {
+                return item.productLogo && item.productName ? (
+                  <View className="p-item" key={item.productId}>
+                    <View className="p-logo-wrap">
+                      <Image
+                        className="p-logo"
+                        src={this.state.pLogoBase + item.productLogo}
+                      />
+                    </View>
+                    <View className="p-name">{item.productName}</View>
+                    <View className="p-tip">比买时降了￥200元</View>
+                    <View className="p-now-price">
+                      <Text className="now-price-num">
+                        ￥{item.productPrice / 100 - 200}
+                      </Text>
+                      <Text>元</Text>
+                    </View>
                   </View>
-                  <View className="p-name">{item.productName}</View>
-                  <View className="p-tip">比买时降了￥200元</View>
-                  <View className="p-now-price">
-                    <Text className="now-price-num">
-                      ￥{item.productPrice / 100 - 200}
-                    </Text>
-                    <Text>元</Text>
-                  </View>
-                </View>
-              ) : null
-            })}
+                ) : null
+              })}     
+            </View>
           </ScrollView>
         </View>
       </View>

@@ -50,11 +50,13 @@
   }
 
   .p-list {
-    overflow: hidden;
     flex: 1;
-    padding: 20px;
     font-size: 0;
     background-color: #fff;
+    .p-list__box {
+      overflow: hidden;
+      padding: 20px;
+    }
     .p-item {
       float: left;
       width: 48%;
